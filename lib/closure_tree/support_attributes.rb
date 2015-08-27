@@ -111,5 +111,13 @@ module ClosureTree
       prefix = include_table_name ? "#{quoted_table_name}." : ""
       "#{prefix}#{connection.quote_column_name(order_column)}"
     end
+
+    def grouped_by_column_name
+      options[:grouped_by_column_name]
+    end
+
+    def grouped_by_column_sym
+      grouped_by_column_name.to_sym
+    end
   end
 end

@@ -150,5 +150,9 @@ module ClosureTree
     def _ct_quoted_id
       _ct.quoted_value(_ct_id)
     end
+
+    def _ct_grouped_by_id
+      read_attribute(_ct.grouped_by_column_sym)
+    end
   end
 end

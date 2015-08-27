@@ -17,12 +17,12 @@ module ClosureTree
     end
 
     def _ct_reorder_siblings(minimum_sort_order_value = nil)
-      _ct.reorder_with_parent_id(_ct_parent_id, minimum_sort_order_value)
+      _ct.reorder_with_parent_id(_ct_parent_id, minimum_sort_order_value, _ct_grouped_by_id)
       reload unless destroyed?
     end
 
     def _ct_reorder_children(minimum_sort_order_value = nil)
-      _ct.reorder_with_parent_id(_ct_id, minimum_sort_order_value)
+      _ct.reorder_with_parent_id(_ct_id, minimum_sort_order_value, _ct_grouped_by_id)
     end
 
     def self_and_descendants_preordered
